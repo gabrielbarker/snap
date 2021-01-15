@@ -4,8 +4,8 @@ from snap.hand import Hand
 
 
 class Grid:
-    def __init__(self, width):
-        self._width = width
+    def __init__(self, height):
+        self._height = height
         self._hands = self._get_new_hands()
 
     def get(self, p):
@@ -21,10 +21,10 @@ class Grid:
         return strings
 
     def _get_new_hands(self):
-        indices = sample(range(52), self._width ** 2) * 2
+        indices = sample(range(52), self._height ** 2) * 2
         shuffle(indices)
         hands = []
-        for i in range(self._width):
-            row = indices[i * self._width * 2 : (i + 1) * self._width * 2]
+        for i in range(self._height):
+            row = indices[i * self._height * 2 : (i + 1) * self._height * 2]
             hands.append(Hand([Card(j) for j in row]))
         return hands
