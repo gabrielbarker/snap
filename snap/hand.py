@@ -5,12 +5,6 @@ class Hand:
     def __init__(self, cards=[]):
         self._cards = cards
 
-    def add(self, card):
-        return self._cards.append(card)
-
-    def remove(self, index):
-        return self._cards.pop(index)
-
     def get(self, index):
         return self._cards[index]
 
