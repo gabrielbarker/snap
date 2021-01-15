@@ -9,14 +9,19 @@ class Position:
     def y(self):
         return self._y
 
-    def add(self, v):
-        self._x += v[0]
-        self._y += v[1]
+    def add(self, pos):
+        self._x += pos.x()
+        self._y += pos.y()
         return self
 
-    def mod(self, v):
-        self._x %= v[0]
-        self._y %= v[1]
+    def times(self, k):
+        self._x *= k
+        self._y *= k
+        return self
+
+    def mod(self, pos):
+        self._x %= pos.x()
+        self._y %= pos.y()
         return self
 
     def clone(self):
