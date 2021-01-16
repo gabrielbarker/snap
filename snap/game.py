@@ -1,5 +1,6 @@
 import time
 import curses
+import curses.ascii
 from threading import Timer
 
 from snap.position import Position
